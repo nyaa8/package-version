@@ -1,5 +1,8 @@
 name: "package-version"
 description: "Extracts version from package.json to an environment variable"
+branding:
+  color: gray-dark
+  icon: package
 author: "nyaascii"
 inputs:
   path:
