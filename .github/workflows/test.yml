@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: ./
-      - run: echo { env.PACKAGE_VERSION }
+      - run: echo ${{ env.PACKAGE_VERSION }}

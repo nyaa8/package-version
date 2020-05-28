@@ -10,7 +10,7 @@ An Action to extract package version from package.json and export it to an envir
     follow-symlinks: 'false' # Optional
 ```
 
-And then you can use `{ env.PACKAGE_VERSION }` 🎉
+And then you can use `${{ env.PACKAGE_VERSION }}` 🎉
 
 Thank you for reading this 🙇🏼‍♀️
 
