@@ -1,10 +1,10 @@
-# 📦 package-version (wip)
+# 📦 package-version
 An Action to extract package version from package.json and export it to an environment variablea
 
 ## 📖 Docs (kind of)
 
 ```yaml
-- uses: nyaascii/package-version
+- uses: nyaascii/package-version@v1
   with:
     path: 'uwu/package.json' # Optional
     follow-symlinks: 'false' # Optional
