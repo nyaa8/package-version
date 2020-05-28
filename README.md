@@ -6,8 +6,8 @@ An Action to extract package version from package.json and export it to an envir
 ```yaml
 - uses: nyaascii/package-version
   with:
-	path: 'uwu/package.json' # Optional
-	follow-symlinks: 'false' # Optional
+    path: 'uwu/package.json' # Optional
+    follow-symlinks: 'false' # Optional
 ```
 
 And then you can use `{ env.PACKAGE_VERSION }` 🎉
