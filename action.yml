@@ -1,0 +1,14 @@
+name: "package-version"
+description: "Extracts version from package.json to an environment variable"
+author: "nyaascii"
+inputs:
+  path:
+    description: "package.json location"
+    required: false
+  follow-symlinks:
+    description: "Indicates whether to follow symbolic links"
+    required: false
+    default: "true"
+runs:
+  using: "node12"
+  main: "dist/index.js"
