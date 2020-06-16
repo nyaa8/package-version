@@ -1,5 +1,5 @@
 # 📦 package-version
-An Action to extract package version from package.json and export it to an environment variablea
+An Action to extract package version from package.json and export it to an environment variable
 
 ## 📖 Docs (kind of)
 
