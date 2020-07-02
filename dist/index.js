@@ -1007,7 +1007,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const followSymbolicLinks = core_1.getInput('follow-symlinks').toLowerCase() !== 'false';
-            const path = core_1.getInput('path') || (yield util_1.findPackageJson(followSymbolicLinks));
+            const path = core_1.getInput('path') ? process.env.GITHUB_WORKSPACE + '/' + core_1.getInput('path') : yield util_1.findPackageJson(followSymbolicLinks);
             const packageVersion = yield util_1.extract(path);
             core_1.exportVariable('PACKAGE_VERSION', packageVersion);
         }
@@ -1524,7 +1524,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extract = exports.findPackageJson = void 0;
 const glob_1 = __webpack_require__(281);
-const patterns = ['**/package.json', '!**/node_modules'].join('\n');
+const patterns = ['**/package.json', '!**/node_modules/'].join('\n');
 function findPackageJson(followSymlinks) {
     return __awaiter(this, void 0, void 0, function* () {
         const globber = yield glob_1.create(patterns, { followSymbolicLinks: followSymlinks });
@@ -1535,14 +1535,13 @@ function findPackageJson(followSymlinks) {
 exports.findPackageJson = findPackageJson;
 function extract(path) {
     return __awaiter(this, void 0, void 0, function* () {
-        return new Promise(resolve => {
-            const packageFile = require(path);
+        return new Promise((resolve, reject) => {
             try {
-                resolve(packageFile.version);
+                const packageFile = require(path);
+                return resolve(packageFile.version);
             }
             catch (_a) {
-                resolve('0');
-                throw new Error('Invalid package.json format or path');
+                return reject(new Error('Invalid package.json format or path'));
             }
         });
     });

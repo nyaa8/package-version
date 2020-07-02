@@ -4,7 +4,7 @@ interface PackageFile {
     version: string
 }
 
-const patterns = ['**/package.json', '!**/node_modules'].join('\n');
+const patterns = ['**/package.json', '!**/node_modules/'].join('\n');
 
 export async function findPackageJson(followSymlinks: boolean): Promise<string> {
     const globber = await create(patterns, { followSymbolicLinks: followSymlinks });
@@ -14,14 +14,13 @@ export async function findPackageJson(followSymlinks: boolean): Promise<string> 
 }
 
 export async function extract(path: string): Promise<string> {
-    return new Promise(resolve => {
-        const packageFile: PackageFile = require(path);
-
+    return new Promise((resolve, reject) => {
         try {
-            resolve(packageFile.version);
+            const packageFile: PackageFile = require(path);
+
+            return resolve(packageFile.version);
         } catch {
-            resolve('0');
-            throw new Error('Invalid package.json format or path');
+            return reject(new Error('Invalid package.json format or path'));
         }
     });
 }
