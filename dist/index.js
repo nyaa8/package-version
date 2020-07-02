@@ -1537,7 +1537,6 @@ function extract(path) {
     return __awaiter(this, void 0, void 0, function* () {
         return new Promise((resolve, reject) => {
             try {
-                console.log(path);
                 const packageFile = require(path);
                 return resolve(packageFile.version);
             }
