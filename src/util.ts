@@ -1,7 +1,5 @@
 import { create } from '@actions/glob';
 
-// const { GITHUB_WORKSPACE } = process.env;
-
 interface PackageFile {
     version: string
 }
@@ -18,7 +16,6 @@ export async function findPackageJson(followSymlinks: boolean): Promise<string> 
 export async function extract(path: string): Promise<string> {
     return new Promise((resolve, reject) => {
         try {
-            console.log(path);
             const packageFile: PackageFile = require(path);
 
             return resolve(packageFile.version);
