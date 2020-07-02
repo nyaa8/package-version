@@ -1007,7 +1007,7 @@ function run() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const followSymbolicLinks = core_1.getInput('follow-symlinks').toLowerCase() !== 'false';
-            const path = core_1.getInput('path') || (yield util_1.findPackageJson(followSymbolicLinks));
+            const path = './' + core_1.getInput('path') || (false);
             const packageVersion = yield util_1.extract(path);
             core_1.exportVariable('PACKAGE_VERSION', packageVersion);
         }
@@ -1541,7 +1541,7 @@ function extract(path) {
                 resolve(packageFile.version);
             }
             catch (_a) {
-                resolve('0');
+                resolve('ERROR');
                 throw new Error('Invalid package.json format or path');
             }
         });
