@@ -18,14 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: |
+          pwd
+          ls
       - uses: ./
       - run: echo ${{ env.PACKAGE_VERSION }}
   test-manual-path:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - run: |
+          pwd
+          ls
       - uses: ./
         with:
           path: 'package.json'
       - run: echo ${{ env.PACKAGE_VERSION }}
+
+# vim: ts=2 sw=2 expandtab
 
