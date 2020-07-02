@@ -20,7 +20,7 @@ export async function extract(path: string): Promise<string> {
         try {
             resolve(packageFile.version);
         } catch {
-            resolve('0');
+            resolve('ERROR');
             throw new Error('Invalid package.json format or path');
         }
     });
