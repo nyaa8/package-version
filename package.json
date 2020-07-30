@@ -23,7 +23,7 @@
         "version",
         "extract"
     ],
-    "author": "nyaascii<contrib@nyaa.science>",
+    "author": "yunree<contrib@yunree.net>",
     "license": "MIT",
     "dependencies": {
         "@actions/core": "^1.2.0",
