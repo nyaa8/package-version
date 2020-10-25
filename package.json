@@ -1,15 +1,14 @@
 {
     "name": "package-version",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "private": true,
     "description": "A GitHub Action to extract version from package.json to an environment variable",
-    "main": "lib/main.js",
+    "main": "src/main.ts",
     "scripts": {
-        "build": "tsc",
         "lint": "eslint src/**/*.ts",
         "format": "eslint --fix src/**/*.ts",
         "pack": "ncc build",
-        "all": "npm run build && npm run lint && npm run format && npm run pack"
+        "all": "npm run lint && npm run format && npm run pack"
     },
     "repository": {
         "type": "git",
@@ -39,7 +38,7 @@
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-standard": "^4.0.1",
         "@types/node": "^14.0.5",
-        "@zeit/ncc": "^0.22.3",
+        "@vercel/ncc": "^0.24.1",
         "eslint-plugin-github": "^4.0.1",
         "js-yaml": "^3.14.0",
         "typescript": "^3.9.3"
