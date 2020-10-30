@@ -12,7 +12,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/actions/typescript-action.git"
+        "url": "git+https://github.com/nyaayaya/package-version"
     },
     "keywords": [
         "actions",
@@ -22,7 +22,7 @@
         "version",
         "extract"
     ],
-    "author": "yunree<contrib@yunree.net>",
+    "author": "nyaayaya<contrib@nyaa.science>",
     "license": "MIT",
     "dependencies": {
         "@actions/core": "^1.2.6",
