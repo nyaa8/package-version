@@ -3,7 +3,7 @@ description: "Extracts version from package.json to an environment variable"
 branding:
   color: gray-dark
   icon: package
-author: "nyaayaya"
+author: "nyaa8"
 inputs:
   path:
     description: "package.json location"

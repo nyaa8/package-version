@@ -4,7 +4,7 @@ An Action to extract package version from package.json and export it to an envir
 ## 📖 Docs (kind of)
 
 ```yaml
-- uses: nyaayaya/package-version@v1
+- uses: nyaa8/package-version@v1
   with:
     path: 'uwu/package.json' # Optional
     follow-symlinks: 'false' # Optional
